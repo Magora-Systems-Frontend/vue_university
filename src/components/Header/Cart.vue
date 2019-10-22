@@ -2,9 +2,9 @@
   <div class="shopping-list">
     <div class="shopping-list__icon">
       <Icon
-              name="shoppingCart"
-              :width="20"
-              :height="20"
+        name="shoppingCart"
+        :width="20"
+        :height="20"
       />
     </div>
   </div>
