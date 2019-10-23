@@ -1,19 +1,18 @@
 <template>
   <div class="not-found-page">
     <div class="not-found-page__caption">
-      {{ caption }}
+      {{ dictionary.caption }}
     </div>
     <router-link v-bind:to="homePageUrl">
-      <button class="not-found-page__button">{{ backButton }}</button>
+      <button class="not-found-page__button">{{ dictionary.backButton }}</button>
     </router-link>
   </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
   import { LANGUAGE_CONSTANTS } from 'store/modules';
   import { ROUTES } from 'config/constants';
-  import lang from './lang';
+  import dictionary from './lang';
 
   export default {
     name: 'NotFound',
@@ -23,14 +22,8 @@
       };
     },
     computed: {
-      ...mapGetters({
-        language: LANGUAGE_CONSTANTS.GET_LANGUAGE,
-      }),
-      caption: function () {
-        return lang[this.language].caption
-      },
-      backButton: function () {
-        return lang[this.language].backButton
+      dictionary() {
+        return this.$store.getters[LANGUAGE_CONSTANTS.GET_CURRENT_DICTIONARY](dictionary);
       },
     }
   }
