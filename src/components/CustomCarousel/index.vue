@@ -124,6 +124,7 @@
 
   .carousel__arrow-left {
     left: 0;
+    transform: translateX(-50%);
     @media (max-width: 768px) {
       left: 0;
     }
