@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { coursesState, categoriesState, commentsState, languageState } from './modules';
+import {
+  coursesState, categoriesState, commentsState,
+  languageState, modalsState,
+} from './modules';
 
 Vue.use(Vuex);
 
@@ -10,6 +13,7 @@ export default new Vuex.Store({
     categoriesState,
     commentsState,
     languageState,
+    modalsState,
   },
   state: {
 

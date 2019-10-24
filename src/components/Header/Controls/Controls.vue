@@ -5,7 +5,8 @@
             padding="10px 0"
     >
       <Button
-              colorStyle="bordered"
+        v-bind:onClick="showLoginModal"
+        colorStyle="bordered"
       >
         {{loginTitle}}
       </Button>
@@ -25,7 +26,7 @@
 
 <script>
   import { mapGetters } from 'vuex';
-  import { LANGUAGE_CONSTANTS } from 'store/modules';
+  import { LANGUAGE_CONSTANTS, MODAL_CONSTANTS } from 'store/modules';
   import Button from 'components/Button'
   import Wrapper from 'components/Wrapper';
   import lang from './lang'
@@ -35,6 +36,11 @@
     components: {
       Button,
       Wrapper,
+    },
+    methods: {
+      showLoginModal() {
+        this.$store.commit(MODAL_CONSTANTS.SHOW, 'login');
+      },
     },
     computed: {
       ...mapGetters({
