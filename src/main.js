@@ -1,18 +1,44 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from 'vue-router';
-import { API_URL_PROD, API_VERSION } from 'config/constants';
-import store from './store'
-import { routes } from './routes';
+import {API_URL_PROD, API_VERSION} from 'config/constants';
 import * as axiosClient from 'utils/api/axiosClient';
 
-axiosClient.init({store, API_URL_PROD, API_VERSION});
-Vue.config.productionTip = false;
-Vue.use(VueRouter);
-const router = new VueRouter({ routes });
+import {createStore} from './store'
+import {createRouter} from './router'
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app');
+
+Vue.config.productionTip = false;
+
+export async function createApp({
+                                  beforeApp = () => {
+                                  },
+                                  afterApp = () => {
+                                  }
+                                } = {}) {
+  const router = createRouter();
+  const store = createStore();
+
+  await beforeApp({
+    router,
+    store,
+  });
+
+  axiosClient.init({store, API_URL_PROD, API_VERSION});
+
+  const app = new Vue({
+    store,
+    router,
+    render: h => h(App)
+  });
+
+  const result = {
+    app,
+    router,
+    store,
+
+  };
+
+  await afterApp(result);
+
+  return result
+}

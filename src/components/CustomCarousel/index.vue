@@ -1,25 +1,25 @@
 <template>
-  <slick
-          :options="settings"
-  >
-    <fragment v-if="typeItem === 'comments'">
-      <ItemComment v-for="(item, index) of data"
-                   :data="item"
-                   :key="index"
-      />
-    </fragment>
-    <fragment v-else-if="typeItem === 'course'">
-      <ItemCourse v-for="(item, index) of data"
-                  :data="item"
-                  :key="index"
-                  :id="id"
-      />
-    </fragment>
-  </slick>
+  <!--<slick-->
+          <!--:options="settings"-->
+  <!--&gt;-->
+    <!--<fragment v-if="typeItem === 'comments'">-->
+      <!--<ItemComment v-for="(item, index) of data"-->
+                   <!--:data="item"-->
+                   <!--:key="index"-->
+      <!--/>-->
+    <!--</fragment>-->
+    <!--<fragment v-else-if="typeItem === 'course'">-->
+      <!--<ItemCourse v-for="(item, index) of data"-->
+                  <!--:data="item"-->
+                  <!--:key="index"-->
+                  <!--:id="id"-->
+      <!--/>-->
+    <!--</fragment>-->
+  <!--</slick>-->
 </template>
 
 <script>
-  import Slick from 'vue-slick';
+  // import Slick from 'vue-slick';
   import {Fragment} from 'vue-fragment';
   import ItemComment from './ItemComment';
   import ItemCourse from './ItemCourse';
@@ -35,7 +35,7 @@
     components: {
       ItemComment,
       ItemCourse,
-      Slick,
+      // Slick,
       Fragment,
     },
     data() {

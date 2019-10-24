@@ -9,5 +9,6 @@ module.exports = {
         path.resolve("./node_modules")
       ]
     },
+
   }
 };

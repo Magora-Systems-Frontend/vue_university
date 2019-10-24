@@ -2,7 +2,7 @@
   <div id="app" class="app">
     <Header/>
     <main class="app__main">
-      <router-view></router-view>
+      <router-view/>
     </main>
     <Footer/>
   </div>
