@@ -1,25 +1,26 @@
 <template>
-  <!--<slick-->
-          <!--:options="settings"-->
-  <!--&gt;-->
-    <!--<fragment v-if="typeItem === 'comments'">-->
-      <!--<ItemComment v-for="(item, index) of data"-->
-                   <!--:data="item"-->
-                   <!--:key="index"-->
-      <!--/>-->
-    <!--</fragment>-->
-    <!--<fragment v-else-if="typeItem === 'course'">-->
-      <!--<ItemCourse v-for="(item, index) of data"-->
-                  <!--:data="item"-->
-                  <!--:key="index"-->
-                  <!--:id="id"-->
-      <!--/>-->
-    <!--</fragment>-->
-  <!--</slick>-->
+  <component
+          :is="slickComp"
+          ref="slick"
+          :options="settings"
+  >
+    <fragment v-if="typeItem === 'comments'">
+      <ItemComment v-for="(item, index) of data"
+                   :data="item"
+                   :key="index"
+      />
+    </fragment>
+    <fragment v-else-if="typeItem === 'course'">
+      <ItemCourse v-for="(item, index) of data"
+                  :data="item"
+                  :key="index"
+                  :id="id"
+      />
+    </fragment>
+  </component>
 </template>
 
 <script>
-  // import Slick from 'vue-slick';
   import {Fragment} from 'vue-fragment';
   import ItemComment from './ItemComment';
   import ItemCourse from './ItemCourse';
@@ -35,11 +36,12 @@
     components: {
       ItemComment,
       ItemCourse,
-      // Slick,
+      Slick: () => import('vue-slick'),
       Fragment,
     },
     data() {
       return {
+        slickComp: '',
         settings: {
           dots: false,
           infinite: true,
@@ -51,6 +53,11 @@
         }
       }
     },
+    mounted() {
+      this.$nextTick(function () {
+        this.slickComp = 'Slick'
+      })
+    }
   }
 </script>
 
