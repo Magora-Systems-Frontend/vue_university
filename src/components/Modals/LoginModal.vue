@@ -4,7 +4,7 @@
       Log In
     </div>
     <form>
-      <ValidationProvider rules="magic" v-slot="{ errors }">
+      <ValidationProvider :rules="{ required: true }" v-slot="{ errors }">
         <input v-model="email" type="text">
         <span>{{ errors[0] }}</span>
       </ValidationProvider>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import './veevalidate';
   export default {
     name: 'LoginModal',
     data() {

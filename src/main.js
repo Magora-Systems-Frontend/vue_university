@@ -1,6 +1,6 @@
 import Vue from 'vue'
+import 'helpers/veevalidateCommonRules';
 import App from './App.vue'
-import 'helpers/veevalidateRules/index';
 import {API_URL_PROD, API_VERSION} from 'config/constants';
 import * as axiosClient from 'utils/api/axiosClient';
 import { ValidationProvider } from 'vee-validate';
