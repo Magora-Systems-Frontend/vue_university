@@ -16,8 +16,8 @@ export function createStore() {
       languageState,
       modalsState,
     },
-    state() {
-    },
+    state:() => ({
+    }),
     mutations: {},
     actions: {},
   })

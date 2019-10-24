@@ -132,7 +132,7 @@
 
   .carousel__arrow-right {
     right: 0;
-    transform: translateX(50%) translateY(-50%);
+    transform: translateX(50%);
     @media (max-width: 768px) {
       right: 0;
     }
