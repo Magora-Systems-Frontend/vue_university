@@ -1,0 +1,12 @@
+{
+  "EN": {
+    "caption": "Sign up",
+    "email": "Email",
+    "submitBtn": "Sign Up"
+  },
+  "RU": {
+    "caption": "Регистрация",
+    "email": "Email",
+    "submitBtn": "Зарегистрироваться"
+  }
+}
