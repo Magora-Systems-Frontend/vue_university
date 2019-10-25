@@ -14,7 +14,7 @@
        <Icon :name="type === 'text' ? 'eye' : 'eye-closed'" stroke="" :width="20"/>
       </span>
     </div>
-    <div v-if="error" class="invalid-feedback">
+    <div v-if="error" class="invalid-feedback" :style="{ display: 'block' }">
       {{ error }}
     </div>
   </div>

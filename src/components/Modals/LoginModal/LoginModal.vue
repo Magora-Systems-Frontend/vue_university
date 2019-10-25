@@ -3,7 +3,7 @@
     <div class="login-modal__caption">
       {{ dictionary.caption }}
     </div>
-    <ValidationObserver ref="observer" v-slot="{ invalid }" tag="form" @submit.prevent="handleSubmit">
+    <ValidationObserver id="sign-in-form" ref="observer" v-slot="{ invalid }" tag="form" @submit.prevent="handleSubmit">
       <ValidationProvider :rules="{ required: true, email: true }" v-slot="{ errors }">
         <TextInput
           class="login-modal__email-container"
@@ -14,7 +14,7 @@
           v-bind:error="errors[0]"
         />
       </ValidationProvider>
-      <ValidationProvider :rules="{ required: true }" v-slot="{ errors }">
+      <ValidationProvider :rules="{ required: true, password: true }" v-slot="{ errors }">
         <PasswordInput
           name="password"
           :placeholder="dictionary.password"

@@ -20,3 +20,18 @@ extend('email', value => {
   }
   return 'Please input valid email address';
 });
+
+extend('password', value => {
+  if (value && value.length >= 6) {
+    return true;
+  }
+  return 'Password should contain at least 6 symbols';
+});
+
+extend('confirmed', {
+  params: [{ name: 'password', isTarget: true }],
+  validate: (value, { password }) => {
+    return value === password;
+  },
+  message: 'Confirmation password should match with password'
+});

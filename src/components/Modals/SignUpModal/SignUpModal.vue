@@ -3,14 +3,40 @@
     <div class="sign-up-modal__caption">
       {{ dictionary.caption }}
     </div>
-    <ValidationObserver ref="observer" v-slot="{ invalid }" tag="form" @submit.prevent="handleSubmit">
+    <ValidationObserver id="sign-in-form" ref="observer" v-slot="{ invalid }" tag="form" @submit.prevent="handleSubmit">
+
       <ValidationProvider :rules="{ required: true, email: true }" v-slot="{ errors }">
         <TextInput
           class="sign-up-modal__email-container"
           name="email"
           type="text"
           :placeholder="dictionary.email"
+          :label="dictionary.email"
           v-model="formValues.email"
+          v-bind:error="errors[0]"
+        />
+      </ValidationProvider>
+
+      <DatePickerInput
+        name="dateOfBirth"
+        :label="dictionary.dateOfBirth"
+      />
+
+      <ValidationProvider name="password" :rules="{ required: true, password: true }" v-slot="{ errors }">
+        <PasswordInput
+          name="password"
+          :placeholder="dictionary.password"
+          :label="dictionary.password"
+          v-model="formValues.password"
+          v-bind:error="errors[0]"
+        />
+      </ValidationProvider>
+      <ValidationProvider rules="required|password|confirmed:password" v-slot="{ errors }">
+        <PasswordInput
+          name="passwordConfirm"
+          :placeholder="dictionary.passwordConfirm"
+          :label="dictionary.passwordConfirm"
+          v-model="formValues.passwordConfirm"
           v-bind:error="errors[0]"
         />
       </ValidationProvider>
@@ -25,6 +51,8 @@
   import { LANGUAGE_CONSTANTS } from 'store/modules';
   import dictionary from './lang';
   import TextInput from 'components/FormElements/TextInput';
+  import PasswordInput from 'components/FormElements/PasswordInput';
+  import DatePickerInput from 'components/FormElements/DatePickerInput';
   import Button from 'components/Button';
 
   export default {
@@ -33,6 +61,8 @@
       return {
         formValues: {
           email: '',
+          password: '',
+          passwordConfirm: '',
         },
       };
     },
@@ -51,6 +81,8 @@
     },
     components: {
       TextInput,
+      PasswordInput,
+      DatePickerInput,
       Button,
     },
   }
