@@ -1,0 +1,10 @@
+{
+  "EN": {
+    "caption": "Page not Found",
+    "backButton": "Home page"
+  },
+  "RU": {
+    "caption": "Страница не найдена",
+    "backButton": "Домашняя страница"
+  }
+}

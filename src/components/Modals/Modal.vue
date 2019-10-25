@@ -15,7 +15,7 @@
 
 <script>
   import { MODAL_CONSTANTS } from 'store/modules';
-  import LoginModal from './LoginModal';
+  import LoginModal from './LoginModal/LoginModal';
 
   export default {
     name: 'Modal',
