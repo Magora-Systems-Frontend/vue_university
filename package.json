@@ -3,13 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "build": "vue-cli-service ssr:build",
+    "serve": "vue-cli-service ssr:serve",
+    "start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production",
     "json-server": "node ./json-server/server.js",
-    "ssr:build": "vue-cli-service ssr:build",
-    "ssr:serve": "vue-cli-service ssr:serve",
-    "ssr:start": "cross-env NODE_ENV=production vue-cli-service ssr:serve --mode production"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.0",
