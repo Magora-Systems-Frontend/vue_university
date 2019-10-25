@@ -1,22 +1,24 @@
 import Vue from 'vue'
+import 'helpers/veevalidateCommonRules';
 import App from './App.vue'
 import {API_URL_PROD, API_VERSION} from 'config/constants';
 import * as axiosClient from 'utils/api/axiosClient';
+import { ValidationProvider } from 'vee-validate';
 
-import {createStore} from './store'
-import {createRouter} from './router'
-
+import { createStore } from './store'
+import { createRouter } from './router'
 
 Vue.config.productionTip = false;
 
 export async function createApp({
-                                  beforeApp = () => {
-                                  },
-                                  afterApp = () => {
-                                  }
-                                } = {}) {
+  beforeApp = () => {
+  },
+  afterApp = () => {
+  }
+} = {}) {
   const router = createRouter();
   const store = createStore();
+  Vue.component('ValidationProvider', ValidationProvider);
 
   await beforeApp({
     router,
