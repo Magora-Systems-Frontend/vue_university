@@ -3,7 +3,7 @@ import 'helpers/veevalidateCommonRules';
 import App from './App.vue'
 import {API_URL_PROD, API_VERSION} from 'config/constants';
 import * as axiosClient from 'utils/api/axiosClient';
-import { ValidationProvider } from 'vee-validate';
+import { ValidationProvider, ValidationObserver } from 'vee-validate';
 
 import { createStore } from './store'
 import { createRouter } from './router'
@@ -19,6 +19,7 @@ export async function createApp({
   const router = createRouter();
   const store = createStore();
   Vue.component('ValidationProvider', ValidationProvider);
+  Vue.component('ValidationObserver', ValidationObserver);
 
   await beforeApp({
     router,

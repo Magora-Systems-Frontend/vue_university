@@ -1,10 +1,16 @@
 {
   "EN": {
-    "caption": "Page not Found",
-    "backButton": "Home page"
+    "caption": "Log In",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Log In",
+    "forgotPassword": "Forgot password"
   },
   "RU": {
-    "caption": "Страница не найдена",
-    "backButton": "Домашняя страница"
+    "caption": "Вход",
+    "email": "Email",
+    "password": "Пароль",
+    "loginBtn": "Вход",
+    "forgotPassword": "Восстановление пароля"
   }
 }

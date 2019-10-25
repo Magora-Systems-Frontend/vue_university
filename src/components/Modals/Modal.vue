@@ -6,6 +6,7 @@
           <button @click.self="closeModal" class="modal-cross">&times;</button>
           <!--list of modals-->
           <LoginModal v-if="modalName === 'login'" />
+          <ForgotPasswordModal v-else-if="modalName === 'forgot-password'" />
         </div>
       </div>
     </div>
@@ -16,6 +17,7 @@
 <script>
   import { MODAL_CONSTANTS } from 'store/modules';
   import LoginModal from './LoginModal/LoginModal';
+  import ForgotPasswordModal from './ForgotPasswordModal/ForgotPasswordModal';
 
   export default {
     name: 'Modal',
@@ -34,6 +36,7 @@
     },
     components: {
       LoginModal,
+      ForgotPasswordModal,
     },
   }
 </script>

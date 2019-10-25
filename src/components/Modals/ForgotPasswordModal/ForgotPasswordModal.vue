@@ -14,19 +14,11 @@
           v-bind:error="errors[0]"
         />
       </ValidationProvider>
-      <ValidationProvider :rules="{ required: true }" v-slot="{ errors }">
-        <PasswordInput
-          name="password"
-          :placeholder="dictionary.password"
-          v-model="formValues.password"
-          v-bind:error="errors[0]"
-        />
-      </ValidationProvider>
       <div class="login-modal__forgot-container">
-        <span @click="onForgotClick" class="login-modal__forgot-link">{{ dictionary.forgotPassword }}</span>
+        <span @click="onLoginClick" class="login-modal__forgot-link">{{ dictionary.login }}</span>
       </div>
       <div class="login-modal__button-container">
-        <Button type="submit" colorStyle="colored">{{ dictionary.loginBtn }}</Button>
+        <Button type="submit" colorStyle="colored">{{ dictionary.submitBtn }}</Button>
       </div>
     </ValidationObserver>
   </div>
@@ -36,16 +28,14 @@
   import { LANGUAGE_CONSTANTS, MODAL_CONSTANTS } from 'store/modules';
   import dictionary from './lang';
   import TextInput from 'components/FormElements/TextInput';
-  import PasswordInput from 'components/FormElements/PasswordInput';
   import Button from 'components/Button';
 
   export default {
-    name: 'LoginModal',
+    name: 'ForgotPasswordModal',
     data() {
       return {
         formValues: {
           email: '',
-          password: '',
         },
       };
     },
@@ -59,15 +49,14 @@
         const isValid = await this.$refs.observer.validate();
         if (!isValid) return;
         // eslint-disable-next-line
-        console.log(this.formValues.email, this.formValues.password);
+        console.log(this.formValues.email);
       },
-      onForgotClick() {
-        this.$store.commit(MODAL_CONSTANTS.SHOW, 'forgot-password');
+      onLoginClick() {
+        this.$store.commit(MODAL_CONSTANTS.SHOW, 'login');
       },
     },
     components: {
       TextInput,
-      PasswordInput,
       Button,
     },
   }
