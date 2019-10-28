@@ -7,6 +7,7 @@ import { ValidationProvider, ValidationObserver } from 'vee-validate';
 
 import { createStore } from './store'
 import { createRouter } from './router'
+import { sync } from 'vuex-router-sync';
 
 Vue.config.productionTip = false;
 
@@ -18,6 +19,8 @@ export async function createApp({
 } = {}) {
   const router = createRouter();
   const store = createStore();
+  sync(store, router);
+
   Vue.component('ValidationProvider', ValidationProvider);
   Vue.component('ValidationObserver', ValidationObserver);
 

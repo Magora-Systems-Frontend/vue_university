@@ -60,4 +60,9 @@
     padding: 0 !important;
   }
 
+  .v-popover {
+    display: flex;
+    justify-content: center;
+  }
+
 </style>
