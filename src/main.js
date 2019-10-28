@@ -41,7 +41,6 @@ export async function createApp({
     app,
     router,
     store,
-
   };
 
   await afterApp(result);

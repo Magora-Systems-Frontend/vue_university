@@ -13,13 +13,14 @@
           :placeholder="dictionary.email"
           :label="dictionary.email"
           v-model="formValues.email"
-          v-bind:error="errors[0]"
+          :error="errors[0]"
         />
       </ValidationProvider>
 
       <DatePickerInput
         name="dateOfBirth"
         :label="dictionary.dateOfBirth"
+        v-model="formValues.dateOfBirth"
       />
 
       <ValidationProvider name="password" :rules="{ required: true, password: true }" v-slot="{ errors }">
@@ -63,6 +64,7 @@
           email: '',
           password: '',
           passwordConfirm: '',
+          dateOfBirth: '',
         },
       };
     },
