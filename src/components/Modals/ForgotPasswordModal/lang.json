@@ -1,0 +1,14 @@
+{
+  "EN": {
+    "caption": "Forgot password",
+    "email": "Email",
+    "login": "Login",
+    "submitBtn": "Submit"
+  },
+  "RU": {
+    "caption": "Восстановление пароля",
+    "email": "Email",
+    "login": "Вход",
+    "submitBtn": "Отправить"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "EN": {
+    "caption": "Sign up",
+    "email": "Email",
+    "submitBtn": "Sign Up",
+    "password": "Password",
+    "passwordConfirm": "Confirm password",
+    "dateOfBirth": "Date of birth"
+  },
+  "RU": {
+    "caption": "Регистрация",
+    "email": "Email",
+    "submitBtn": "Зарегистрироваться",
+    "password": "Пароль",
+    "passwordConfirm": "Подтверждение пароля",
+    "dateOfBirth": "День рождения"
+  }
+}

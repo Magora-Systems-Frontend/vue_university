@@ -1,0 +1,16 @@
+{
+  "EN": {
+    "caption": "Log In",
+    "email": "Email",
+    "password": "Password",
+    "loginBtn": "Log In",
+    "forgotPassword": "Forgot password"
+  },
+  "RU": {
+    "caption": "Вход",
+    "email": "Email",
+    "password": "Пароль",
+    "loginBtn": "Вход",
+    "forgotPassword": "Восстановление пароля"
+  }
+}

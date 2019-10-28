@@ -5,7 +5,7 @@
             padding="10px 0"
     >
       <Button
-        v-bind:onClick="showLoginModal"
+        :onClick="showLoginModal"
         colorStyle="bordered"
       >
         {{loginTitle}}
@@ -16,7 +16,8 @@
             padding="10px 0"
     >
       <Button
-              colorStyle="colored"
+        :onClick="showSignUpModal"
+        colorStyle="colored"
       >
         {{signTitle}}
       </Button>
@@ -40,6 +41,9 @@
     methods: {
       showLoginModal() {
         this.$store.commit(MODAL_CONSTANTS.SHOW, 'login');
+      },
+      showSignUpModal() {
+        this.$store.commit(MODAL_CONSTANTS.SHOW, 'sign-up');
       },
     },
     computed: {
