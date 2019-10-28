@@ -27,7 +27,8 @@
     "vue-slick": "^1.1.15",
     "vue-star-rating": "^1.6.1",
     "vue-svg-loader": "^0.12.0",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@akryum/vue-cli-plugin-ssr": "^0.6.0",
