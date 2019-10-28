@@ -5,6 +5,7 @@ export const {
 
 export const ROUTES = {
   HOME_PAGE: '/',
+  TEST_PAGE: '/test',
 };
 
 export const API_METHODS = {
