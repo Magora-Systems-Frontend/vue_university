@@ -1,5 +1,8 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+.form-control {
+  display: flex;
+}
 .form-control.is-invalid {
   background: none;
   padding-right: 12px;

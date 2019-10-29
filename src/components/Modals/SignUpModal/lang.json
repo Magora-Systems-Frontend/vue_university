@@ -5,7 +5,9 @@
     "submitBtn": "Sign Up",
     "password": "Password",
     "passwordConfirm": "Confirm password",
-    "dateOfBirth": "Date of birth"
+    "dateOfBirth": "Date of birth",
+    "city": "City",
+    "hobbies": "Hobby"
   },
   "RU": {
     "caption": "Регистрация",
@@ -13,6 +15,8 @@
     "submitBtn": "Зарегистрироваться",
     "password": "Пароль",
     "passwordConfirm": "Подтверждение пароля",
-    "dateOfBirth": "День рождения"
+    "dateOfBirth": "День рождения",
+    "city": "Город",
+    "hobbies": "Хобби"
   }
 }

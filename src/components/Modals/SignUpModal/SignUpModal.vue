@@ -20,7 +20,27 @@
       <DatePickerInput
         name="dateOfBirth"
         :label="dictionary.dateOfBirth"
-        v-model="formValues.dateOfBirth"
+        :cityValue="formValues.dateOfBirth"
+      />
+
+      <FormSelector
+        name="city"
+        :className="'select-base form-control form-select'"
+        :label="dictionary.city"
+        :options="[{label: 'Los Angeles', value: 'LA'}, {label: 'New York City', value: 'NY'}, {label: 'Novosibirsk', value: 'Nsk'}]"
+        :elementPlaceholder="'City'"
+        @setCity="setCity"
+      />
+
+      <FormSelector
+        name="hobby"
+        :className="'select-base form-control form-select multiple-select'"
+        :label="dictionary.hobbies"
+        :options="['Painting', 'Singing', 'Dancing', 'Embroidery' ]"
+        :elementPlaceholder="'Hobbies'"
+        @setHobbies="setHobbies"
+        :clearableSelect="true"
+        :isMultiple="true"
       />
 
       <ValidationProvider name="password" :rules="{ required: true, password: true }" v-slot="{ errors }">
@@ -55,6 +75,7 @@
   import PasswordInput from 'components/FormElements/PasswordInput';
   import DatePickerInput from 'components/FormElements/DatePickerInput';
   import Button from 'components/Button';
+  import FormSelector from 'components/FormElements/FormSelector';
 
   export default {
     name: 'ForgotPasswordModal',
@@ -62,6 +83,8 @@
       return {
         formValues: {
           email: '',
+          city: '',
+          hobbies: '',
           password: '',
           passwordConfirm: '',
           dateOfBirth: '',
@@ -74,11 +97,18 @@
       },
     },
     methods: {
+      setCity(values) {
+        this.formValues.city = values.label;
+      },
+      setHobbies(values) {
+        (values !== null) && (this.formValues.hobbies = values);
+      },
       async handleSubmit() {
         const isValid = await this.$refs.observer.validate();
         if (!isValid) return;
         // eslint-disable-next-line
-        console.log(this.formValues.email);
+        // console.log(this.formValues.email);
+        console.log(this.formValues);
       },
     },
     components: {
@@ -86,6 +116,7 @@
       PasswordInput,
       DatePickerInput,
       Button,
+      FormSelector,
     },
   }
 </script>

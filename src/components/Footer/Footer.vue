@@ -16,9 +16,11 @@
         </div>
         <div class="col-sm-3 language-select_wrapper">
           <Select
-                  :options="[{label: 'Русский', value: 'RU'}, {label: 'English',value: 'EN'}]"
-                  :defaultInputValue="{label: 'English',value: 'EN'}"
-                  :onInput="setLanguage"
+            :className="'select-base lang-select'"
+            :options="[{label: 'Русский', value: 'RU'}, {label: 'English',value: 'EN'}]"
+            :defaultInputValue="{label: 'English',value: 'EN'}"
+            :onInput="setLanguage"
+            :clearableSelect="false"
           />
         </div>
       </div>
