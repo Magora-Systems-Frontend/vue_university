@@ -11,17 +11,20 @@
             :columnsCount="1"
             error="AAAAA"
     />
+    <PhoneSimpleField/>
   </div>
 </template>
 
 <script>
   import Checkbox from 'components/FormElements/Checkbox/Checkbox'
   import RadioButton from 'components/FormElements/RadioButton'
+  import PhoneSimpleField from 'components/Fields/PhoneSimpleField'
 
   export default {
     components: {
       Checkbox,
-      RadioButton
+      RadioButton,
+      PhoneSimpleField
     },
   }
 </script>
