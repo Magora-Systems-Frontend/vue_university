@@ -23,6 +23,15 @@
         :cityValue="formValues.dateOfBirth"
       />
 
+      <ValidationProvider v-slot="{ errors }">
+        <PhoneInput
+                class=""
+                name="phone"
+                label="Phone"
+                :error="errors[0]"
+        />
+      </ValidationProvider>
+
       <FormSelector
         name="city"
         :className="'select-base form-control form-select'"
@@ -76,6 +85,7 @@
   import DatePickerInput from 'components/FormElements/DatePickerInput';
   import Button from 'components/Button';
   import FormSelector from 'components/FormElements/FormSelector';
+  import PhoneInput from 'components/FormElements/PhoneInput';
 
   export default {
     name: 'ForgotPasswordModal',
@@ -106,9 +116,6 @@
       async handleSubmit() {
         const isValid = await this.$refs.observer.validate();
         if (!isValid) return;
-        // eslint-disable-next-line
-        // console.log(this.formValues.email);
-        console.log(this.formValues);
       },
     },
     components: {
@@ -117,6 +124,7 @@
       DatePickerInput,
       Button,
       FormSelector,
+      PhoneInput,
     },
   }
 </script>

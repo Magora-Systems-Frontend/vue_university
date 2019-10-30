@@ -18,7 +18,7 @@
 <script>
   import Checkbox from 'components/FormElements/Checkbox/Checkbox'
   import RadioButton from 'components/FormElements/RadioButton'
-  import PhoneSimpleField from 'components/Fields/PhoneSimpleField'
+  import PhoneSimpleField from 'components/FormElements/PhoneInput'
 
   export default {
     components: {

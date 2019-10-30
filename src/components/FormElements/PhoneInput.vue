@@ -1,14 +1,19 @@
 <template>
-  <label class="input-component">
-    <span class="input-component__label">{{label}}</span>
+  <div class="form-group">
+    <label class="input-component">{{label}}</label>
     <MaskedInput
-      :mask="['+', '7', '(' ,/\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]"
-      :guide="false"
-      :onFocus="onFocus"
-      :onBlur="onBlur"
-      :name="name"
+            class="form-control"
+            :mask="['+', '7', '(' ,/\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-' , /\d/, /\d/, '-', /\d/, /\d/]"
+            :value="value"
+            :guide="false"
+            :onFocus="onFocus"
+            :onBlur="onBlur"
+            :name="name"
     />
-  </label>
+    <div v-if="error" class="invalid-feedback">
+      {{ error }}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -24,30 +29,33 @@
         type: String,
         default: 'Phone'
       },
+      value: {
+        type: String,
+        default: ''
+      },
       name: {
         type: String,
         default: 'name'
       },
+      error: {
+        type: String,
+        default: ''
+      },
       onChange: {
         type: Function,
-        default: () => {}
+        default: () => {
+        }
       },
       onFocus: {
         type: Function,
-        default: () => {}
+        default: () => {
+        }
       },
       onBlur: {
         type: Function,
-        default: () => {}
+        default: () => {
+        }
       },
-      value: {
-        type: null,
-        value: ''
-      },
-      countryCode: {
-        type: String,
-        default: 'RU'
-      }
     }
   }
 </script>
@@ -58,6 +66,7 @@
   .phone {
     &__icon {
       fill: $gray-dark;
+
       &._open {
         fill: $blue-dark;
       }
