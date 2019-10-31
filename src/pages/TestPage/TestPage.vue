@@ -1,5 +1,7 @@
 <template>
   <div style="padding: 20px">
+    <Autocomplete
+    />
     <Checkbox
             label="Checkbox label"
             name="checkbox_name"
@@ -21,6 +23,7 @@
   import RadioButton from 'components/FormElements/RadioButton';
   import PhoneSimpleField from 'components/FormElements/PhoneInput';
   import TimePicker from 'components/FormElements/TimePicker';
+  import Autocomplete from 'components/FormElements/Autocomplete';
 
   export default {
     components: {
@@ -28,6 +31,7 @@
       RadioButton,
       PhoneSimpleField,
       TimePicker,
+      Autocomplete,
     },
     data() {
       return {
