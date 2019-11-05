@@ -15,6 +15,7 @@
     />
     <PhoneSimpleField/>
     <TimePicker/>
+    <FileUpload/>
   </div>
 </template>
 
@@ -24,6 +25,7 @@
   import PhoneSimpleField from 'components/FormElements/PhoneInput';
   import TimePicker from 'components/FormElements/TimePicker';
   import Autocomplete from 'components/FormElements/Autocomplete';
+  import FileUpload from 'components/FormElements/FileUpload';
 
   export default {
     components: {
@@ -32,6 +34,7 @@
       PhoneSimpleField,
       TimePicker,
       Autocomplete,
+      FileUpload,
     },
     data() {
       return {

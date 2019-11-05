@@ -1,5 +1,6 @@
 <template>
   <SimpleSVG
+          :class="addClass"
           :filepath="filepath"
           :fill="fill"
           :stroke="stroke"
@@ -24,6 +25,10 @@
         type: Number,
       },
       fill: {
+        type: String,
+        default: '',
+      },
+      addClass: {
         type: String,
         default: '',
       },

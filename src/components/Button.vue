@@ -169,4 +169,21 @@
     color: $button-category-color;
   }
 }
+._simple {
+  padding: 0;
+  background: transparent;
+  color: $button-blue;
+  fill: $button-blue;
+  font-weight: 600;
+  text-transform: none;
+  &:hover,
+  &:focus {
+    color: $button-blue-hover;
+    fill: $button-blue-hover;
+  }
+  svg {
+    position: relative;
+  }
+}
+
 </style>

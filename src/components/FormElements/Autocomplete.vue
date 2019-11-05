@@ -19,7 +19,6 @@
 <script>
   import {VueAutosuggest} from 'vue-autosuggest';
 
-
   export default {
     name: 'Autocomplete',
     components: {
