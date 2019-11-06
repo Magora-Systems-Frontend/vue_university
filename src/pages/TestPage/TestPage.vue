@@ -16,6 +16,9 @@
     <PhoneSimpleField/>
     <TimePicker/>
     <FileUpload/>
+    <ImageUpload
+      name="images"
+    />
   </div>
 </template>
 
@@ -26,6 +29,7 @@
   import TimePicker from 'components/FormElements/TimePicker';
   import Autocomplete from 'components/FormElements/Autocomplete';
   import FileUpload from 'components/FormElements/FileUpload';
+  import ImageUpload from 'components/FormElements/ImageUpload';
 
   export default {
     components: {
@@ -35,6 +39,7 @@
       TimePicker,
       Autocomplete,
       FileUpload,
+      ImageUpload
     },
     data() {
       return {

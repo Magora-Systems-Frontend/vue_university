@@ -1,5 +1,5 @@
 <template>
-  <div class="drag form-group">
+  <div class="upload-files form-group">
     <label>Upload your files:</label>
     <div class="upload">
       <ul class="files-list pl-2 mb-1" v-if="files.length">
@@ -91,7 +91,7 @@
 <style lang="scss">
   @import "../../styles/variables";
 
-  .drag {
+  .upload-files {
     input {
       display: none;
     }
