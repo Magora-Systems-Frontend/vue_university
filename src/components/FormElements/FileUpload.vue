@@ -15,8 +15,9 @@
         <file-upload
                 class="btn_upload-files"
                 :input-id="name"
-                post-action="/upload/post"
-                :multiple="true"
+                :multiple="multiple"
+                :accept="accept"
+                :size="size"
                 :drop="true"
                 :drop-directory="true"
                 v-model="files"
@@ -55,6 +56,18 @@
       name: {
         type: String,
         default: 'file'
+      },
+      accept: {
+        type: String,
+        default: ''
+      },
+      multiple: {
+        type: Boolean,
+        default: true
+      },
+      size: {
+        type: Number,
+        default: 1024 * 1024
       },
       error: {
         type: String,
