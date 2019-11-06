@@ -17,7 +17,7 @@
           <div class="subtitle">{{desc}}</div>
           <button class="button">{{btn}}</button>
         </div>
-        <Icon name="form" fill="#ffffff" :width="30" :height="30" />
+        <Icon name="editIcon" fill="#ffffff" :width="30" :height="30" />
       </div>
       <div class="recommendations__banner_icons">
         <Icon name="paperClip" fill="#ffffff" :width="30" :height="30" />

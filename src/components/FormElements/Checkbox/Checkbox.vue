@@ -1,25 +1,19 @@
 <template>
   <div class="form-group">
     <div class="checkbox-component">
-      <input
-              :name="name"
-              :id="inputId"
-              type="checkbox"
-              :value="value"
-              @input="$emit('input', $event.target.value)"
-              @change="handleChange"
-      >
-      <SimpleSVG v-show="isChecked"
-              :filepath="filepath"
-              width="20px"
-              height="20px"
-      />
-      <SimpleSVG v-show="!isChecked"
-              :filepath="filepath2"
-              width="20px"
-              height="20px"
-      />
-      <label v-if="label" :for="inputId">{{ label }}</label>
+      <label class="checkbox-component__svg-wrapper">
+        <input
+                :name="name"
+                :id="inputId"
+                type="checkbox"
+                :value="value"
+                @input="$emit('input', $event.target.value)"
+                @change="handleChange"
+        >
+        <checked v-if="isChecked"/>
+        <unchecked v-else/>
+      </label>
+      <label class="checkbox-component__label" v-if="label" :for="inputId">{{ label }}</label>
 
     </div>
     <div v-if="error" class="invalid-feedback">
@@ -29,12 +23,14 @@
 </template>
 
 <script>
-  import {SimpleSVG} from 'vue-simple-svg'
+  import checked from './checkbox-checked.svg';
+  import unchecked from './checkbox-unchecked.svg';
 
   export default {
     name: 'Checkbox',
     components: {
-      SimpleSVG,
+      checked,
+      unchecked
     },
     props: {
       label: {type: String, default: ''},
@@ -42,7 +38,10 @@
       addComponentClass: {type: String, default: ''},
       error: {type: String, default: ''},
       value: {type: Boolean, default: false},
-      onChange: {type: Function, default: () => {}},
+      onChange: {
+        type: Function, default: () => {
+        }
+      },
     },
     data() {
       return {
@@ -50,14 +49,6 @@
       }
     },
     computed: {
-      filepath: function () {
-        // return this.isChecked ? require(`./checkbox-checked.svg`) : require(`./checkbox-unchecked.svg`);
-        return require(`./checkbox-checked.svg`);
-      },
-      filepath2: function() {
-        return require(`./checkbox-unchecked.svg`);
-
-      },
       inputId() {
         return `checkbox-input-${this.name}`;
       },
@@ -74,9 +65,18 @@
 <style lang="scss">
   .checkbox-component {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
 
-    label {
+    &__svg-wrapper {
+      margin-bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__label {
       margin-left: 5px;
       margin-bottom: 0;
       display: flex;
@@ -92,10 +92,8 @@
     input {
       cursor: pointer;
       position: absolute;
-      width: 16px;
-      height: 16px;
-      opacity: 0;
-      top: 2px;
+      width: 0;
+      height: 0;
     }
 
     &__label-wrapper {

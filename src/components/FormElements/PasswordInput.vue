@@ -11,7 +11,7 @@
         :placeholder="placeholder"
       >
       <span @click="onEyeClick" class="password-input__eye">
-       <Icon :name="type === 'text' ? 'eye' : 'eye-closed'" stroke="" :width="20"/>
+       <Icon :name="type === 'text' ? 'eye' : 'eyeClosed'" stroke="" :width="20"/>
       </span>
     </div>
     <div v-if="error" class="invalid-feedback" :style="{ display: 'block' }">

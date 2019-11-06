@@ -42,7 +42,7 @@
           <div class="header-mobile__content-search" @click="toggleMobileNav">
             <Wrapper padding="12px">
               <Icon
-                      name="menu"
+                      name="mobileMenu"
                       :width="22"
                       :height="22"
               />
